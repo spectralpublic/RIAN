@@ -43,9 +43,9 @@ Three data sets are used: Houston_2013，Pavia University and Salinas, which can
 Run "HSI_Data_Preparation_Houston.py", "HSI_Data_Preparation_PU.py" and "HSI_Data_Preparation_Salinas.py " to get training set and testing set of each data set.
 
 
-2. Run "python train.py" for training and testing.
+2. Run "python RIAN.py" for training and testing.
 
-Testing results are saved in the directory "result_RIAN".
+Revise lines 27-33 to change data set. Testing results are saved in the directory "result_RIAN".
 
 
 3. Run "result_RIAN/DATASETNAME/acc_in_testing_set.m" in Matlab to calculate evaluation metrics such as OA, AA and kappa. "DATASETNAME" is the name of data set.
