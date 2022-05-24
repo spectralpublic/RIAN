@@ -12,16 +12,7 @@ Image Processing, 2022.
 
 The details of files and directories in this repository are shown as follows.
 
-| Item                                 | Amount |
-|--------------------------------------|:------:|
-| The number of images                 |  37264 |
-| The number of unique questions       |   91   |
-| The number of unique answers         |   574  |
-| The total number of VQA triplets     | 111134 |
-| The number of yes or no VQA triplets |  64610 |
-| The number of number VQA triplets    |  32331 |
-| The number of others VQA triplets    |  14193 |
-
+|---------------------------------------|:------------------------------------------------------------------:|
 | ./Data                 		| The directory containing hyperspectral images.|
 | ./result_RIAN				| The directory containing hyperspectral images.|
 | attention.py 				| Code of the proposed CSpeA and RSpaA modules.|
