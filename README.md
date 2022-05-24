@@ -8,7 +8,7 @@
 This is the reserch code of the IEEE Transactions on Geoscience and Remote Sensing 2022 paper, which is currently under review.
 
 X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
-Image Processing, Under review, 2022.
+Image Processing, 2022.
 
 
 ### 2. Start
@@ -51,11 +51,11 @@ MGCN: https://github.com/danfenghong/IEEE_TGRS_GCN
 
 
 
-### 3. Related work <!--相关工作以及个人研究工作-->
+### 3. Related work
 
 The paper of this code is currently under review. If you find the code and dataset useful in your research, please consider citing our paper.
 
 
 X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
-Image Processing, Under review, 2022.
+Image Processing, 2022.
 
