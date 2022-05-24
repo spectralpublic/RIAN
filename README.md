@@ -21,7 +21,7 @@ The details of files and directories in this repository are shown as follows.
 | HSI_Data_Preparation_PU.py		| Split Pavia University data set into training set and testing set.|
 | HSI_Data_Preparation_Salinas.py	| Split Salinas data set into training set and testing set.|
 | RIAN.py 				| The main manuscript of the proposed RIAN.|
-| utils_houston.py			| The main manuscript of the proposed RIAN.|
+| utils_houston.py			| Parameter settings for Houston2013 data set.|
 | utils_PU.py				| Parameter settings for Pavia University data set.|
 | utils_salinas.py			| Parameter settings for Salinas data set.|
 
