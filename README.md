@@ -24,7 +24,7 @@ Requirements:
 
 1. Split training set and testing set. 
 
-Three data sets are used: Houston_2013，Pavia University and Salinas.
+Three data sets are used: Houston_2013，Pavia University and Salinas, which can be downloaded from Google Drive https://drive.google.com/file/d/1BkwgTRh3JtKqQcLQ7DkMv98jChs15JmB/view?usp=sharing.
 
 Run "HSI_Data_Preparation_Houston.py", "HSI_Data_Preparation_PU.py" and "HSI_Data_Preparation_Salinas.py " to get training set and testing set of each data set.
 
