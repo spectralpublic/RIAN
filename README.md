@@ -17,9 +17,9 @@ The details of files and directories in this repository are shown as follows.
 | ./Data                 		| The directory containing hyperspectral images.|
 | ./result_RIAN				| The directory containing hyperspectral images.|
 | attention.py 				| Code of the proposed CSpeA and RSpaA modules.|
-| HSI_Data_Preparation_Houston.py	| Split Houston2013 data set into training set and testing set.|
-| HSI_Data_Preparation_PU.py		| Split Pavia University data set into training set and testing set.|
-| HSI_Data_Preparation_Salinas.py	| Split Salinas data set into training set and testing set.|
+| HSI_Data_Preparation_Houston.py	| Code for splitting Houston2013 data set into training set and testing set.|
+| HSI_Data_Preparation_PU.py		| Code for splitting Pavia University data set into training set and testing set.|
+| HSI_Data_Preparation_Salinas.py	| Code for splitting Salinas data set into training set and testing set.|
 | RIAN.py 				| The main manuscript of the proposed RIAN.|
 | utils_houston.py			| Parameter settings for Houston2013 data set.|
 | utils_PU.py				| Parameter settings for Pavia University data set.|
