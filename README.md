@@ -12,7 +12,8 @@ Image Processing, 2022.
 
 The details of files and directories in this repository are shown as follows.
 
-|---------------------------------------|:------------------------------------------------------------------:|
+| Item                 			| Description	|
+|---------------------------------------|------------------------------------------------------------------|
 | ./Data                 		| The directory containing hyperspectral images.|
 | ./result_RIAN				| The directory containing hyperspectral images.|
 | attention.py 				| Code of the proposed CSpeA and RSpaA modules.|
