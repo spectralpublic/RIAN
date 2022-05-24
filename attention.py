@@ -1,28 +1,24 @@
-""" Implementation of center attention """
-__author__ = "Hao Sun"
-__license__ = "CAS"
+""" Implementation of attention """
 
 import tensorflow as tf
 from tensorflow.contrib import slim
 
 
-# spectral attention based on center pixel
+
 def CSpeA(net):
-  #tf.set_random_seed(0)
+
   batchsize, height, width, in_channels = net.get_shape().as_list()
-  #print('center position',int(net.shape[1]/2), int(net.shape[2]/2))
+
   net_center = net[:,int(net.shape[1]/2),int(net.shape[2]/2),:]  
-  #print('net_center.shape', net_center.shape)   
+  
   net_center = tf.reshape(net_center, [tf.shape(net_center)[0], 1, 1, in_channels])     # (B,C) -> (B,1,C)   
-  #print('net_center.shape', net_center.shape)
+
   global_conv = slim.conv2d(net_center, in_channels, 1,  activation_fn=tf.nn.sigmoid, normalizer_fn=None)
-  #print('global_conv: ', global_conv.shape)
+
   global_conv = tf.reshape(global_conv, [tf.shape(net)[0], 1, 1, in_channels])
   scale =  net * global_conv
-  #print('scale shape: ', scale.shape)
+
   return scale
-
-
 
 
 def get_drop_mask(attention, drop_thr):
@@ -33,7 +29,7 @@ def get_drop_mask(attention, drop_thr):
 
 def RSpaA(net, depth, thr_value, embed=False, scope=None):
   batchsize, height, width, in_channels = net.get_shape().as_list()
-  with tf.variable_scope(scope, 'nonlocal', values=[net]) as sc:
+  with tf.variable_scope(scope, 'attention', values=[net]) as sc:
     with slim.arg_scope([slim.conv2d], normalizer_fn=None):
       if embed:
         a = slim.conv2d(net, depth, 1, stride=1, activation_fn=tf.nn.relu, scope='embA')
@@ -64,7 +60,7 @@ def RSpaA(net, depth, thr_value, embed=False, scope=None):
     f = f* binary_mask  + (1-binary_mask)*www
     f_relu_mask_softmax = tf.nn.softmax(f)
 
-    fg = tf.matmul(f_relu_mask_softmax, g_flat)#/(norm_f_cos+0.000001)
+    fg = tf.matmul(f_relu_mask_softmax, g_flat)
     fg = tf.reshape(fg, [tf.shape(net)[0], height, width, in_channels])
 
 

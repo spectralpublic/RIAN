@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Feb 18 16:21:13 2017
-@author: Xiangyong Cao
-This code is modified based on https://github.com/KGPML/Hyperspectral
+This code is modified based on https://github.com/KGPML/Hyperspectral and https://github.com/xiangyongcao/CNN_HSIC_MRF
 """
 
 import numpy as np

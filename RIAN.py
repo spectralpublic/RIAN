@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on 2019/12/27
-@author: Hao Sun
+The paper of this code is currently under review. If you find the code and dataset useful in your research, please consider citing our paper.
 
-Original: 
-Created on Sat Feb 18 16:21:13 2017
-@author: Xiangyong Cao
-This code is modified based on https://github.com/KGPML/Hyperspectral
+X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
+Image Processing, 2022.
+
+This code is modified based on https://github.com/KGPML/Hyperspectral and https://github.com/xiangyongcao/CNN_HSIC_MRF
 """
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function

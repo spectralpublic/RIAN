@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on 2020/01/02
-@author: Hao Sun
-
-Created on Sat Feb 18 16:21:13 2017
-@author: Xiangyong Cao
-This code is modified based on https://github.com/KGPML/Hyperspectral
+This code is modified based on https://github.com/KGPML/Hyperspectral and https://github.com/xiangyongcao/CNN_HSIC_MRF
 """
 
 import scipy.io
@@ -76,10 +71,6 @@ for j in range(0,Width):
         if(curr_tar!=0): 
             Classes[curr_tar-1].append(curr_inp) 
             Classes_Index[curr_tar-1].append(curr_ind)
-#All_data = {}
-#All_data['patch'] = All_Patches
-#All_data['labels'] = All_Labels
-#scipy.io.savemat(os.path.join(DATA_PATH, 'All_data'+'_'+str(patch_size)+'.mat'),All_data)
 
 ## Collect patches for each class based on gt_train 
 Classes_train,Classes_Index_train = [],[]
@@ -189,25 +180,6 @@ if flag_augment:
             Train_Patch[k].append(flipped_patch)
             Train_Label[k].append(k)
    
-            #if(len(Train_Patch[k])<times*Num_Train_Each_Class[k]):   
-            #    #num = random.randint(0,2)
-            #    j = random.randint(0,Num_Train_Each_Class[k]-1)
-            #    #noise = fixed_Train_Patch[k][j] 
-            #    noise = fixed_Train_Patch[k][j] + np.random.normal(0,0.001,size = fixed_Train_Patch[k][l].shape) 
-            #    #if num == 0 :
-            #    #    #Flip patch up-down
-            #    #    flipped_patch = np.flipud(noise) 
-            #    #if num == 1 :
-            #    #    #Flip patch left-right
-            #    #    flipped_patch = np.fliplr(noise) 
-            #    #if num == 2 :
-            #    #    #Rotate patch by a random angle
-            #    #    no = random.randrange(-180,180,90)
-            #    #    flipped_patch = scipy.ndimage.interpolation.rotate(noise, no,axes=(1, 0), 
-            #    #        reshape=False, output=None, order=3, mode='constant', cval=0.0, prefilter=False)
-            #    Train_Patch[k].append(noise)
-            #    Train_Label[k].append(k)
-
         Resample_Num_Count.append(len(Train_Patch[k]))
                                 
     OS_Aug_Num_Training_Each = []             
@@ -236,10 +208,7 @@ Test_Label = convertToOneHot(Test_Label,num_classes=Num_Classes)
 ## Save the patches in segments
 # Train Data
 train_dict = {}
-#file_name = 'Train_'+str(patch_size)+'.mat'
-#train_dict["train_patch"] = Train_Patch
-#train_dict["train_labels"] = Train_Label
-#scipy.io.savemat(os.path.join(DATA_PATH, file_name),train_dict)
+
 num_train = len(Train_Patch)
 num_train_file = 10
 num_each_file = int(num_train / num_train_file)
@@ -257,10 +226,7 @@ for i in range(num_train_file):
     
 # Test Data
 test_dict = {}
-#file_name = 'Test_'+str(patch_size)+'.mat'
-#test_dict["test_patch"] = Test_Patch
-#test_dict["test_labels"] = Test_Label
-#scipy.io.savemat(os.path.join(DATA_PATH, file_name),test_dict)
+
 num_test = len(Test_Patch)
 num_test_file = 10
 num_each_file = int(num_test / num_test_file)

@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on 2019/03/20
-@author: Hao Sun
-
-Created on Sat Feb 18 16:21:13 2017
-@author: Xiangyong Cao
-This code is modified based on https://github.com/KGPML/Hyperspectral
+This code is modified based on https://github.com/KGPML/Hyperspectral and https://github.com/xiangyongcao/CNN_HSIC_MRF
 """
 
 import scipy.io
@@ -31,17 +26,10 @@ print(Database)
 Database_path = 'Data/' + Database 
 DATA_PATH = os.path.join(os.getcwd(),Database_path)
 
-#Data = scipy.io.loadmat(os.path.join(DATA_PATH, 'Indian_pines.mat'))['indian_pines']
-#Label = scipy.io.loadmat(os.path.join(DATA_PATH, 'Indian_pines_gt.mat'))['indian_pines_gt']
-
-#Data = scipy.io.loadmat(os.path.join(DATA_PATH, 'Salinas.mat'))['salinas']
-#Label = scipy.io.loadmat(os.path.join(DATA_PATH, 'Salinas_gt.mat'))['salinas_gt']
 
 Data = scipy.io.loadmat(os.path.join(DATA_PATH, 'PaviaU.mat'))['paviaU']
 Label = scipy.io.loadmat(os.path.join(DATA_PATH, 'PaviaU_gt.mat'))['paviaU_gt']
 
-#Data = scipy.io.loadmat(os.path.join(DATA_PATH, 'Simu_data.mat'))['Simu_data']
-#Label = scipy.io.loadmat(os.path.join(DATA_PATH, 'Simu_label.mat'))['Simu_label']
 
 ## Some constant parameters
 Height, Width, Band = Data.shape[0], Data.shape[1], Data.shape[2]
@@ -167,31 +155,22 @@ if flag_augment:
             noise = Train_Patch[k][l]
             new_patch = np.transpose(noise,[1,2,0])
             transformation_patch = np.rot90(new_patch, k=1)    
-            #new_patch = np.transpose(new_patch,[2,0,1])
             flipped_patch = np.transpose(transformation_patch,[2,0,1])
 
-            #flipped_patch = scipy.ndimage.interpolation.rotate(noise, 90,axes=(1, 0), 
-            #    reshape=False, output=None, order=3, mode='constant', cval=0.0, prefilter=False)
             Train_Patch[k].append(flipped_patch)
             Train_Label[k].append(k)
 
             noise = Train_Patch[k][l]
             new_patch = np.transpose(noise,[1,2,0])
             transformation_patch = np.rot90(new_patch, k=2)    
-            #new_patch = np.transpose(new_patch,[2,0,1])
             flipped_patch = np.transpose(transformation_patch,[2,0,1])
-            #flipped_patch = scipy.ndimage.interpolation.rotate(noise, 180,axes=(1, 0), 
-             #   reshape=False, output=None, order=3, mode='constant', cval=0.0, prefilter=False)
             Train_Patch[k].append(flipped_patch)
             Train_Label[k].append(k)
 
             noise = Train_Patch[k][l]
             new_patch = np.transpose(noise,[1,2,0])
             transformation_patch = np.rot90(new_patch, k=3)    
-            #new_patch = np.transpose(new_patch,[2,0,1])
             flipped_patch = np.transpose(transformation_patch,[2,0,1])
-            #flipped_patch = scipy.ndimage.interpolation.rotate(noise, 270,axes=(1, 0), 
-            #    reshape=False, output=None, order=3, mode='constant', cval=0.0, prefilter=False)
             Train_Patch[k].append(flipped_patch)
             Train_Label[k].append(k)
   
@@ -255,8 +234,6 @@ for i in range(num_test_file):
     scipy.io.savemat(os.path.join(DATA_PATH, file_name),test_dict)
     start += Num_Each_File[i]
 
-
-
 train_ind = {}
 train_ind['TrainIndex'] = TrainIndex
 scipy.io.savemat(os.path.join(DATA_PATH, 'TrainIndex'+'_'+str(patch_size)+'.mat'),train_ind)
@@ -264,8 +241,6 @@ scipy.io.savemat(os.path.join(DATA_PATH, 'TrainIndex'+'_'+str(patch_size)+'.mat'
 test_ind = {}
 test_ind['TestIndex'] = TestIndex
 scipy.io.savemat(os.path.join(DATA_PATH, 'TestIndex'+'_'+str(patch_size)+'.mat'),test_ind)
-
-
 
 
 Training_data, Test_data = Prepare_data()
