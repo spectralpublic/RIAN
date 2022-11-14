@@ -74,3 +74,12 @@ If you find the code and dataset useful in your research, please consider citing
 [X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
 Image Processing, 2022.](https://ieeexplore.ieee.org/document/9785505)
 
+@ARTICLE{9785505,  
+author={Zheng, Xiangtao and Sun, Hao and Lu, Xiaoqiang and Xie, Wei},  
+journal={IEEE Transactions on Image Processing},   
+title={Rotation-Invariant Attention Network for Hyperspectral Image Classification},   
+year={2022},  
+volume={31},
+doi={10.1109/TIP.2022.3177322}  
+}
+
