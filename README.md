@@ -5,10 +5,10 @@
 
 ### 1. Introduction
 
-This is the reserch code of the IEEE Transactions on Image Processing 2022 paper, which is currently under review.
+This is the reserch code of the IEEE Transactions on Image Processing 2022 paper.
 
-X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
-Image Processing, 2022.
+[X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
+Image Processing, 2022.](https://ieeexplore.ieee.org/document/9785505)
 
 The details of files and directories in this repository are shown as follows.
 
@@ -68,9 +68,9 @@ MGCN: https://github.com/danfenghong/IEEE_TGRS_GCN
 
 ### 3. Related work
 
-The paper of this code is currently under review. If you find the code and dataset useful in your research, please consider citing our paper.
+If you find the code and dataset useful in your research, please consider citing our paper.
 
 
-X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
-Image Processing, 2022.
+[X. Zheng, H. Sun, X. Lu, and W. Xie, “Rotation-Invariant Attention Network for Hyperspectral Image Classification,” IEEE Transactions on 
+Image Processing, 2022.](https://ieeexplore.ieee.org/document/9785505)
 
