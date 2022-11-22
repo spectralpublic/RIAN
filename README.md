@@ -30,7 +30,7 @@ The details of files and directories in this repository are shown as follows.
 
 Requirements:
              
-	Python 3
+	Python 2.7
 	
 	tensorflow-1.4.1
 
